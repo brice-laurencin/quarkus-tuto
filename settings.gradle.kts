@@ -11,3 +11,9 @@ pluginManagement {
     }
 }
 rootProject.name="code-with-quarkus-kotlin"
+
+
+include(
+    ":clients:jvm",
+)
+project(":clients:jvm").projectDir = File("clients/jvm")

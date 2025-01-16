@@ -1,3 +1,4 @@
+clients/jvm/src/main/openapi/my-service.json
 # Gradle
 .gradle/
 build/

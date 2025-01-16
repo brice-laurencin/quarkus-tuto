@@ -49,3 +49,16 @@ kotlin {
         javaParameters = true
     }
 }
+
+// OAS as artifact (Used by x-client project to generate the client sources)
+val oas by configurations.creating {
+    isCanBeConsumed = true
+    isCanBeResolved = false
+}
+
+val oasFile = project.file("build/generated/resources/openapi.json")
+
+val oasArtifact =
+    artifacts.add("oas", oasFile) {
+        builtBy(tasks["quarkusAppPartsBuild"])
+    }
